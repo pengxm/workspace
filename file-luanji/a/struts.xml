@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.custom.i18n.resources" value="mess" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<!-- <constant name="struts.devMode" value="true"/> -->
+	<constant name="struts.devMode" value="false" />
+	<!-- 共通 -->
+	<package name="default" extends="struts-default">
+		<default-action-ref name="notFound" />
+		<action name="notFound">
+			<result type="redirectAction">
+				<param name="actionName">syserr</param>
+				<param name="namespace">/page</param>
+			</result>
+		</action>
+	</package>
+	<package name="page" extends="struts-default">
+		<global-results>
+			<result name="syserror" type="redirectAction">
+				<param name="actionName">syserr</param>
+				<param name="namespace">/page</param>
+			</result>
+		</global-results>
+		<action name="syserr"
+			class="com.chinaunicom.wo.flow.services.action.PageErrAction">
+			<result name="success">/web/pg/err/sys.jsp</result>
+			<result name="input">/web/pg/err/sys.jsp</result>
+			<result name="error">/web/pg/err/sys.jsp</result>
+		</action>
+		<action name="download"
+			class="com.chinaunicom.wo.flow.services.page.tmp.TP001Action">
+			<result name="success">/web/pg/tp01/tp01.jsp</result>
+			<result name="input">/web/pg/tp01/tp01.jsp</result>
+			<result name="error">/web/pg/tp01/tp01.jsp</result>
+		</action>
+		<action name="luck"
+			class="com.chinaunicom.wo.flow.services.page.tmp.TP002Action">
+			<result name="success">/web/pg/tp01/tp02.jsp</result>
+			<result name="input">/web/pg/tp01/tp02.jsp</result>
+			<result name="error">/web/pg/tp01/tp02.jsp</result>
+		</action>
+		<action name="list"
+			class="com.chinaunicom.wo.flow.services.page.tmp.TP003Action">
+			<result name="success">/web/pg/tp01/tp03.jsp</result>
+			<result name="input">/web/pg/tp01/tp03.jsp</result>
+			<result name="error">/web/pg/tp01/tp03.jsp</result>
+		</action>
+		<action name="rank"
+			class="com.chinaunicom.wo.flow.services.page.rank.RNK01Action">
+			<result name="success">/web/pg/rnk01/rnk01.jsp</result>
+			<result name="error">/web/pg/rnk01/rnk01.jsp</result>
+		</action>
+		<action name="act001"
+			class="com.chinaunicom.wo.flow.services.page.act.ACT001Action">
+			<result name="success">/web/pg/act01/act01.jsp</result>
+			<result name="error">/web/pg/act01/act01.jsp</result>
+			<result name="result">/web/pg/act02/act02.jsp</result>
+			<result name="login" type="redirect">${loginUrl}</result>
+		</action>
+		<action name="act002"
+			class="com.chinaunicom.wo.flow.services.page.act.ACT002Action">
+			<result name="init">/web/pg/act01/act01.jsp</result>
+			<result name="error">/web/pg/act01/act01.jsp</result>
+			<result name="success">/web/pg/act02/act02.jsp</result>
+			<result name="result">/web/pg/act02/act02.jsp</result>
+			<result name="login" type="redirect">${loginUrl}</result>
+		</action>
+		<action name="act003"
+			class="com.chinaunicom.wo.flow.services.page.act.ACT003Action">
+			<result name="success">/web/pg/act03/act03.jsp</result>
+			<result name="error">/web/pg/act03/act03.jsp</result>
+			<result name="result">/web/pg/act04/act04.jsp</result>
+			<result name="login" type="redirect">${loginUrl}</result>
+		</action>
+		<action name="act004"
+			class="com.chinaunicom.wo.flow.services.page.act.ACT004Action">
+			<result name="success">/web/pg/act04/act04.jsp</result>
+			<result name="error">/web/pg/act03/act03.jsp</result>
+			<result name="goto">/web/pg/act03/act03.jsp</result>
+			<result name="result">/web/pg/act04/act04.jsp</result>
+			<result name="login" type="redirect">${loginUrl}</result>
+		</action>
+	<action name="act005"
+		class="com.chinaunicom.wo.flow.services.page.act.ACT005Action">
+		<result name="success">/web/pg/act05/act06.jsp</result>
+		<result name="error">/web/pg/act05/act06.jsp</result>
+		<result name="login" type="redirect">${loginUrl}</result>
+	</action>
+		<action name="flow"
+			class="com.chinaunicom.wo.flow.services.page.flow.FLW001Action">
+			<result name="success">/web/pg/flw01/flw01.jsp</result>
+			<result name="input">/web/pg/flw01/flw01.jsp</result>
+			<result name="error">/web/pg/flw01/flw01.jsp</result>
+			<result name="login" type="redirect">${loginUrl}</result>
+		</action>
+		<action name="view"
+			class="com.chinaunicom.wo.flow.services.page.view.IDX001Action">
+			<result name="success">/web/pg/view/index.jsp</result>
+			<result name="input">/web/pg/view/index.jsp</result>
+			<result name="error">/web/pg/view/index.jsp</result>
+			<result name="login" type="redirect">${loginUrl}</result>
+		</action>
+	</package>
+	<package name="services" namespace="/services" extends="json-default">
+		<global-results>
+			<result name="success" type="json">
+				<param name="includeProperties">json</param>
+				<param name="callbackParameter">callback</param>
+			</result>
+			<result name="error" type="json">
+				<param name="includeProperties">json</param>
+				<param name="callbackParameter">callback</param>
+			</result>
+			<result name="syserror" type="redirectAction">
+				<param name="actionName">OL999</param>
+				<param name="namespace">/services</param>
+			</result>
+		</global-results>
+		<action name="ol001"
+			class="com.chinaunicom.wo.flow.services.ol001.OL001Action">
+		</action>
+		<action name="ol002"
+			class="com.chinaunicom.wo.flow.services.ol002.OL002Action">
+		</action>
+		<action name="ol003"
+			class="com.chinaunicom.wo.flow.services.ol003.OL003Action">
+		</action>
+		<action name="ol004"
+			class="com.chinaunicom.wo.flow.services.ol004.OL004Action">
+		</action>
+		<action name="ol005"
+			class="com.chinaunicom.wo.flow.services.ol005.OL005Action">
+		</action>
+		<action name="ol006"
+			class="com.chinaunicom.wo.flow.services.ol006.OL006Action">
+		</action>
+		<action name="ol007"
+			class="com.chinaunicom.wo.flow.services.ol007.OL007Action">
+		</action>
+		<action name="ol008"
+			class="com.chinaunicom.wo.flow.services.ol008.OL008Action">
+		</action>
+		<action name="ol009"
+			class="com.chinaunicom.wo.flow.services.ol009.OL009Action">
+		</action>
+		<action name="ol010"
+			class="com.chinaunicom.wo.flow.services.ol010.OL010Action">
+		</action>
+		<action name="getflow"
+			class="com.chinaunicom.wo.flow.services.ol010.OL010Action">
+		</action>
+		<action name="ol011"
+			class="com.chinaunicom.wo.flow.services.ol011.OL011Action">
+		</action>
+		<action name="ol012"
+			class="com.chinaunicom.wo.flow.services.ol012.OL012Action">
+		</action>
+		<action name="ol013"
+			class="com.chinaunicom.wo.flow.services.ol013.OL013Action">
+		</action>
+		<action name="ol014"
+			class="com.chinaunicom.wo.flow.services.ol014.OL014Action">
+		</action>
+		<action name="ol015"
+			class="com.chinaunicom.wo.flow.services.ol015.OL015Action">
+		</action>
+		<action name="news"
+			class="com.chinaunicom.wo.flow.services.ol015.OL015Action">
+		</action>
+		<action name="ol016"
+			class="com.chinaunicom.wo.flow.services.ol016.OL016Action">
+		</action>
+		<action name="ol017"
+			class="com.chinaunicom.wo.flow.services.ol017.OL017Action">
+		</action>
+		<action name="ol018"
+			class="com.chinaunicom.wo.flow.services.ol018.OL018Action">
+		</action>
+		<action name="ol019"
+			class="com.chinaunicom.wo.flow.services.ol019.OL019Action">
+		</action>
+		<action name="ol020"
+			class="com.chinaunicom.wo.flow.services.ol020.OL020Action">
+		</action>
+		<action name="ol021"
+			class="com.chinaunicom.wo.flow.services.ol021.OL021Action">
+		</action>
+		<action name="ol022"
+			class="com.chinaunicom.wo.flow.services.ol022.OL022Action">
+		</action>
+		<action name="ol024"
+			class="com.chinaunicom.wo.flow.services.ol024.OL024Action">
+		</action>
+		<action name="ol025"
+			class="com.chinaunicom.wo.flow.services.ol025.OL025Action">
+		</action>
+		<action name="ol026"
+			class="com.chinaunicom.wo.flow.services.ol026.OL026Action">
+		</action>
+		<action name="ol027"
+			class="com.chinaunicom.wo.flow.services.ol027.OL027Action">
+		</action>
+		<action name="ol028"
+			class="com.chinaunicom.wo.flow.services.ol028.OL028Action">
+			<result name="success" type="redirect">${filePath}</result>
+		</action>
+		<action name="ol029"
+			class="com.chinaunicom.wo.flow.services.ol029.OL029Action">
+		</action>
+		<action name="netfetchtel"
+			class="com.chinaunicom.wo.flow.services.ol029.OL029Action">
+		</action>
+		<action name="ol030"
+			class="com.chinaunicom.wo.flow.services.ol030.OL030Action">
+		</action>
+		<action name="getunikey"
+			class="com.chinaunicom.wo.flow.services.ol030.OL030Action">
+		</action>
+		<action name="ol031"
+			class="com.chinaunicom.wo.flow.services.ol031.OL031Action">
+		</action>
+		<action name="getweather"
+			class="com.chinaunicom.wo.flow.services.ol031.OL031Action">
+		</action>
+		<action name="ol032"
+			class="com.chinaunicom.wo.flow.services.ol032.OL032Action">
+		</action>
+		<action name="ol033"
+			class="com.chinaunicom.wo.flow.services.ol033.OL033Action">
+		</action>
+		<action name="ol034"
+			class="com.chinaunicom.wo.flow.services.ol034.OL034Action">
+		</action>
+		<action name="hotword"
+			class="com.chinaunicom.wo.flow.services.ol034.OL034Action">
+		</action>
+		<action name="ol035"
+			class="com.chinaunicom.wo.flow.services.ol035.OL035Action">
+		</action>
+		<action name="flow"
+			class="com.chinaunicom.wo.flow.services.ol035.OL035Action">
+		</action>
+		<action name="ol036"
+			class="com.chinaunicom.wo.flow.services.ol036.OL036Action">
+		</action>
+		<action name="ol998"
+			class="com.chinaunicom.wo.flow.services.ol998.OL998Action">
+		</action>
+		<action name="ol999"
+			class="com.chinaunicom.wo.flow.services.ol999.OL999Action">
+			<result name="success" type="json">
+				<param name="includeProperties">msg.*</param>
+			</result>
+		</action>
+	</package>
+</struts>

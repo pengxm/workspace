@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+    <title>活动</title>
+    <link rel="stylesheet" href="lottery.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text">您还有1次抽奖机会</h1>
+      <div class="wrap"><img src="images/cjBg_02.png" class="bgBanner"><img src="images/footBall_03.png" class="footBall"><img src="images/ballBg_03.png" alt="" class="ballBg">
+        <div class="btn">开始抽奖</div>
+      </div>
+      <div class="popup">
+        <div class="alert alert1"><img src="images/smile_01.png" class="smile">
+          <h3>恭喜你获得 <b>Skullcandy耳机</b></h3>
+          <div class="button">确定</div>
+        </div>
+        <div class="alert alert2"><img src="images/smile_01.png" class="smile">
+          <h3>恭喜你获得<b>Skullcandy耳机</b></h3>
+          <h4>请填写你的邮寄地址，以方便我们为您派发奖品</h4>
+          <ul class="user">
+            <li class="uesrName"><span>姓名 :</span>
+              <input>
+            </li>
+            <li class="tel"><span>手机 :</span>
+              <input>
+            </li>
+            <li class="add"><span>地址 :</span>
+              <input>
+            </li>
+          </ul>
+          <div class="button2">确定</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="jquery-1.11.2.min.js"></script>
+<script src="phoneauto.js"></script>
+<script charset="utf-8">
+  $(function(){
+    var flag = true;
+    var prizeName = '小米手环'; // 请求奖品
+    $('.btn').click(function(){
+        if(flag == true) {
+            if(prizeName == '小米手环') {           
+                $('.footBall').addClass('run1');
+                $('.alert').removeClass('act');
+                $('.alert2').addClass('act');
+                $('.button2').click(function(){
+                    $('.alert2 h3, h4').css('display','none');
+                    $('.alert2 .user').css('display','block');
+                    $('.alert2 .button2').addClass('button');
+                    $('.button').click(function(){
+                        $('.popup').slideUp(400);
+                    });
+                });
+            } else if(prizeName == '5元1G') {
+                $('.footBall').addClass('run2');
+                $('.alert').removeClass('act');
+                $('.alert1').addClass('act');
+            } else if(prizeName == 'Skullcandy耳机') {
+                $('.footBall').addClass('run3');
+                $('.alert').removeClass('act');
+                $('.alert2').addClass('act');
+                $('.button2').click(function(){
+                    $('.alert2 h3, h4').css('display','none');
+                    $('.alert2 .user').css('display','block');
+                    $('.alert2 .button2').addClass('button');
+                    $('.button').click(function(){
+                        $('.popup').slideUp(400);
+                    });
+                });
+            } else if(prizeName == '10元3G') {
+                $('.footBall').addClass('run4');
+                $('.alert').removeClass('act');
+                $('.alert1').addClass('act');
+            }   
+            $('h1').html('您还有0次抽奖机会');
+            $('b').html(prizeName);   
+            $('.ballBg').css('display', 'none'); 
+            timer = setTimeout(function(){
+                $('.popup').slideDown(300);
+            }, 1200);
+        } else {
+            alert('您没有抽奖机会了');
+            return false;
+        }
+        flag = false;
+    });
+    $('.button').click(function(){
+        $('.popup').slideUp(300);
+    });
+});
+</script>

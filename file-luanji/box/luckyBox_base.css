@@ -1,0 +1,561 @@
+@CHARSET "UTF-8";
+* {
+	padding: 0;
+	margin: 0;
+	position:relative;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+a {
+	text-decoration: none;
+	color: #585858;
+}
+a:hover {
+	color: #f43030;
+}
+ul,ol{
+	list-style:none;
+	text-align: center;
+}
+div,img {
+	display: block;
+}
+.page-w {
+	width: 100%;
+	height: auto !important;
+	overflow: hidden;
+}
+.img-h {
+	height: 100%;
+	width: auto !important;
+}
+.img-w {
+	width: 100%;
+	height: auto;
+}
+.center{
+	display:block;
+	margin:0 auto;
+}
+._center{
+	position:absolute;
+	right: 0px;
+	left: 0px;
+	margin:auto;
+}
+.radius{
+	border:none;
+	border-radius:5px;
+}
+input{
+	-webkit-appearance:none;
+}
+input[type='button']{
+	cursor:pointer;	
+}
+.block{
+	display:block;
+}
+.box-shadow{
+	box-shadow: 1px 2px 3px black;
+}
+@media screen and (min-width:1024px){
+	.rule{
+		padding:0 40px;
+	}
+	.advertisement{
+		width:980px;
+		height:120px;
+		overflow:hidden;
+		margin:0 auto;
+		padding:10px 0;
+	}
+	body>hgroup>section{
+		width:100%;
+		padding-top: 50px;
+	}
+	body>hgroup .page{
+		padding-top:500px;
+		height:1650px;
+		width:1024px;
+	}
+	body>hgroup>section .details{
+		width:640px;
+		right: 15px;
+	}
+	body>hgroup>section .details .rules{
+		font-family: "微软雅黑";
+		font-size: 20px;	
+		line-height: 30px;
+		letter-spacing: 2px;
+		color: #3e3e3e;
+	}
+	body>hgroup>section .details .rules h1{
+		font:bold 25px/50px "微软雅黑";
+		margin-bottom: 30px;
+	}
+	
+	.container a,a:hover,a:active,a:visited{
+		color:inherit;
+	}
+	.container{
+		height:115px;
+		overflow:hidden;
+		background:url("../../images/shop/images_luckyBox/bkg.jpg") no-repeat 0 0/auto 100%;
+		font-size:0;
+		font-family:"微软雅黑";
+	}
+	.container div{
+		display:inline-block;
+		zoom:1;
+		height:100%;
+		vertical-align:middle;
+		font-size:18px;
+		box-sizing:border-box;
+	}
+	.container div:first-child{
+		width:40%;
+		padding:35px 0 0 30px;
+	}
+	.container div:nth-child(2){
+		width:60%;
+		padding:20px 0 0 0;
+		color:white;
+		padding-left:15px;
+	}
+	.container div:first-child span{
+		font:20px/30px '微软雅黑';
+	}
+	.container div #count{
+		zoom:1;
+		display:inline-block;
+		color:red;
+	}
+	.container div:nth-child(2) p{
+		padding:5px 0;
+	}
+	.container div:nth-child(2) p:first-child span{
+		letter-spacing:5px;
+	}
+	.container div:nth-child(2) p span{
+		width:60%;
+		height:33px;
+		line-height:33px;
+		display:inline-block;
+		zoom:1;
+		left:15px;
+		text-align:center;
+		border-radius:5px;
+		cursor:pointer;
+	}
+	.container div:nth-child(2) p span:nth-child(3){
+		margin-left:6%;
+	}
+	.container div:nth-child(2) p font{
+		position:absolute;
+		width:30px;
+		height:30px;
+		text-align:center;
+		left: -10px;
+		top: -14px;
+		line-height:30px;
+		background:url("../../images/shop/images_luckyBox/icon_03.png") no-repeat 0px 0px/100% 100%;
+		font-size:16px;
+	}
+	/*
+		鍔ㄦ佺洿鎾
+	 */
+	body>hgroup .dynamic{
+		width:280px;
+		position: absolute;
+		right:-325px;
+		top:230px;
+	}
+	body>hgroup .dynamic h1{
+		font:18px/40px "微软雅黑";
+		color:#26b4e9;
+		padding-left: 20px;
+		background-color: white;
+		border-bottom: 2px solid #26b4e9;
+	}
+	body>hgroup .dynamic #list{
+		height:725px;
+		overflow: hidden;
+	}
+	body>hgroup .dynamic #list li{
+		padding:15px;
+		background-color: white;
+		font:16px/25px "微软雅黑";
+		border-bottom: 1px dashed #cccccc;
+	}
+	body>hgroup .dynamic #list li span{
+		display: block;
+		text-align: left;
+	}
+	body>hgroup .dynamic #list li .phone{
+		color:red;
+	}
+	body>hgroup .dynamic #list li mark{
+		color: red;
+	}
+	.container div:nth-child(2) p font{
+		animation-name:kep;
+		animation-duration:500ms;/*鎸佺画鏃堕棿*/
+		animation-timing-function:ease;/*鍔ㄧ敾鏇茬嚎*/
+		animation-direction:alternate;/*姝ｅ弽鎾斁*/
+		animation-iteration-count:infinite;/*鏃犵嚎寰幆鎾斁*/
+		-webkit-animation-name:kep;
+		-webkit-animation-duration:500ms;/*鎸佺画鏃堕棿*/
+		-webkit-animation-timing-function:ease;/*鍔ㄧ敾鏇茬嚎*/
+		-webkit-animation-direction:alternate;/*姝ｅ弽鎾斁*/
+		-webkit-animation-iteration-count:infinite;/*鏃犵嚎寰幆鎾斁*/
+		-moz-animation-name:kep;
+		-moz-animation-duration:500ms;/*鎸佺画鏃堕棿*/
+		-moz-animation-timing-function:ease;/*鍔ㄧ敾鏇茬嚎*/
+		-moz-animation-direction:alternate;/*姝ｅ弽鎾斁*/
+		-moz-animation-iteration-count:infinite;/*鏃犵嚎寰幆鎾斁*/
+		-o-animation-name:kep;
+		-o-animation-duration:500ms;/*鎸佺画鏃堕棿*/
+		-o-animation-timing-function:ease;/*鍔ㄧ敾鏇茬嚎*/
+		-o-animation-direction:alternate;/*姝ｅ弽鎾斁*/
+		-o-animation-iteration-count:infinite;/*鏃犵嚎寰幆鎾斁*/
+		-ms-animation-name:kep;
+		-ms-animation-duration:500ms;/*鎸佺画鏃堕棿*/
+		-ms-animation-timing-function:ease;/*鍔ㄧ敾鏇茬嚎*/
+		-ms-animation-direction:alternate;/*姝ｅ弽鎾斁*/
+		-ms-animation-iteration-count:infinite;/*鏃犵嚎寰幆鎾斁*/
+	}
+	.container div:nth-child(2) p:nth-child(2) font{
+		animation-delay:500ms;/*鍔ㄧ敾寤惰繜*/
+	}
+	.rd{
+		background-color:#ee265f;
+	}
+	.bl{
+		background-color:#07c1d3;
+	}
+	.yl{
+		background-color:#ffba00;
+	}
+	.gn{
+		background-color:#1dca4f;
+	}
+	/*
+	css3 姘旀场鍔ㄧ敾
+	*/
+	@-webkit-keyframes kep{
+		from{
+			transform:scale(1);
+			left: -12px;
+			top: -14px;
+		}
+		80%{
+			transform:scale(1.2);
+			left:-14px;
+			top:-16px;
+		}
+		to{
+			transform:scale(1.2);
+			left:-14px;
+			top:-16px;
+		}
+	}
+	@-moz-keyframes kep{
+		from{
+			transform:scale(1);
+			left: -12px;
+			top: -14px;
+		}
+		80%{
+			transform:scale(1.2);
+			left:-14px;
+			top:-16px;
+		}
+		to{
+			transform:scale(1.2);
+			left:-14px;
+			top:-16px;
+		}
+	}
+	@-ms-keyframes kep{
+		from{
+			transform:scale(1);
+			left: -12px;
+			top: -14px;
+		}
+		80%{
+			transform:scale(1.2);
+			left:-14px;
+			top:-16px;
+		}
+		to{
+			transform:scale(1.2);
+			left:-14px;
+			top:-16px;
+		}
+	}
+	@-o-keyframes kep{
+		from{
+			transform:scale(1);
+			left: -12px;
+			top: -14px;
+		}
+		80%{
+			transform:scale(1.2);
+			left:-14px;
+			top:-16px;
+		}
+		to{
+			transform:scale(1.2);
+			left:-14px;
+			top:-16px;
+		}
+	}
+}
+@media screen and (max-width:1023px){
+	.rule{
+		padding:0 15px;
+	}
+	.advertisement{
+		width:320px;
+		height:50px;
+		overflow:hidden;
+		margin:0 auto;
+		padding:10px 0;
+	}
+	hgroup .top img{
+		width: 100%;
+	}
+	hgroup .rules p{
+		word-break:break-all;
+	}
+	hgroup .rules h1{
+		font:bold 25px/40px "微软雅黑";
+	}
+	hgroup .rules{
+		font:18px/26px "微软雅黑";
+		color:#3e3e3e;
+		padding:10px 15px;
+		overflow:hidden;
+	}
+	.container a,a:hover,a:active,a:visited{
+		color:inherit;
+		margin:0px;
+	}
+	.container{
+		height:80px;
+		overflow:hidden;
+		background:url("../../images/shop/images_luckyBox/bkg.jpg") no-repeat 0 0/auto 100%;
+		font-size:0;
+		font-family:"微软雅黑";
+	}
+	.container div{
+		display:inline-block;
+		zoom:1;
+		height:100%;
+		vertical-align:middle;
+		font-size:14px;
+		box-sizing:border-box;
+		padding:20px 0 0 10px;
+	}
+	.container div:first-child{
+		width:50%;
+	}
+	.container div:nth-child(2){
+		width:50%;
+		color:white;
+		padding-left:0px;
+	}
+	.container div:first-child span{
+		font:14px/20px '微软雅黑';
+	}
+	.container div #count{
+		zoom:1;
+		display:inline-block;
+		color:red;
+	}
+	.container div:nth-child(2) p{
+		padding:5px 0;
+	}
+	.container div:nth-child(2) p span{
+		display:inline-block;
+		zoom:1;
+		left:10px;
+		text-align:center;
+		border-radius:3px;
+		cursor:pointer;
+		padding:0 3px;
+	}
+	.container div:nth-child(2) p span:nth-child(3){
+		margin-left:6%;
+	}
+	.container div:nth-child(2) p font{
+		position:absolute;
+		width:20px;
+		height:20px;
+		text-align:center;
+		left: -10px;
+		top: -14px;
+		line-height:20px;
+		background:url("../../images/shop/images_luckyBox/icon_03.png") no-repeat 0px 0px/100% 100%;
+		font-size:12px;
+	}
+	/*
+		鍔ㄦ佺洿鎾
+	 */
+	body>hgroup .dynamic{
+		width:150px;
+		width:40vw;
+		position: absolute;
+		right:10px;
+		top:300px;
+		top:80vw;
+		z-index:10;
+	}
+	body>hgroup .dynamic h1{
+		font:14px/20px "微软雅黑";
+		color:#26b4e9;
+		background-color: white;
+		border-bottom: 2px solid #26b4e9;
+		text-align:left;
+		padding:10px 5px;
+		margin:0;
+	}
+	body>hgroup .dynamic #list{
+		height:70px;
+		background:white;
+		overflow: hidden;
+	}
+	body>hgroup .dynamic #list li{
+		padding:5px;
+		background-color: white;
+		font:14px/20px "微软雅黑";
+		border-bottom: 1px dashed #cccccc;
+	}
+	body>hgroup .dynamic #list li span{
+		display: block;
+		text-align: left;
+	}
+	body>hgroup .dynamic #list li .phone{
+		color:red;
+	}
+	body>hgroup .dynamic #list li mark{
+		color: red;
+	}
+	.container div:nth-child(2) p font{
+		animation-name:kep;
+		animation-duration:500ms;/*鎸佺画鏃堕棿*/
+		animation-timing-function:ease;/*鍔ㄧ敾鏇茬嚎*/
+		animation-direction:alternate;/*姝ｅ弽鎾斁*/
+		animation-iteration-count:infinite;/*鏃犵嚎寰幆鎾斁*/
+		-webkit-animation-name:kep;
+		-webkit-animation-duration:500ms;/*鎸佺画鏃堕棿*/
+		-webkit-animation-timing-function:ease;/*鍔ㄧ敾鏇茬嚎*/
+		-webkit-animation-direction:alternate;/*姝ｅ弽鎾斁*/
+		-webkit-animation-iteration-count:infinite;/*鏃犵嚎寰幆鎾斁*/
+		-moz-animation-name:kep;
+		-moz-animation-duration:500ms;/*鎸佺画鏃堕棿*/
+		-moz-animation-timing-function:ease;/*鍔ㄧ敾鏇茬嚎*/
+		-moz-animation-direction:alternate;/*姝ｅ弽鎾斁*/
+		-moz-animation-iteration-count:infinite;/*鏃犵嚎寰幆鎾斁*/
+		-o-animation-name:kep;
+		-o-animation-duration:500ms;/*鎸佺画鏃堕棿*/
+		-o-animation-timing-function:ease;/*鍔ㄧ敾鏇茬嚎*/
+		-o-animation-direction:alternate;/*姝ｅ弽鎾斁*/
+		-o-animation-iteration-count:infinite;/*鏃犵嚎寰幆鎾斁*/
+		-ms-animation-name:kep;
+		-ms-animation-duration:500ms;/*鎸佺画鏃堕棿*/
+		-ms-animation-timing-function:ease;/*鍔ㄧ敾鏇茬嚎*/
+		-ms-animation-direction:alternate;/*姝ｅ弽鎾斁*/
+		-ms-animation-iteration-count:infinite;/*鏃犵嚎寰幆鎾斁*/
+	}
+	.container div:nth-child(2) p:nth-child(2) font{
+		animation-delay:500ms;/*鍔ㄧ敾寤惰繜*/
+	}
+	.rd{
+		background-color:#ee265f;
+	}
+	.bl{
+		background-color:#07c1d3;
+	}
+	.yl{
+		background-color:#ffba00;
+	}
+	.gn{
+		background-color:#1dca4f;
+	}
+	/*
+	css3 姘旀场鍔ㄧ敾
+	*/
+	@-webkit-keyframes kep{
+		from{
+			transform:scale(1);
+			left: -12px;
+			top: -14px;
+		}
+		80%{
+			transform:scale(1.2);
+			left:-14px;
+			top:-16px;
+		}
+		to{
+			transform:scale(1.2);
+			left:-14px;
+			top:-16px;
+		}
+	}
+	@-moz-keyframes kep{
+		from{
+			transform:scale(1);
+			left: -12px;
+			top: -14px;
+		}
+		80%{
+			transform:scale(1.2);
+			left:-14px;
+			top:-16px;
+		}
+		to{
+			transform:scale(1.2);
+			left:-14px;
+			top:-16px;
+		}
+	}
+	@-ms-keyframes kep{
+		from{
+			transform:scale(1);
+			left: -12px;
+			top: -14px;
+		}
+		80%{
+			transform:scale(1.2);
+			left:-14px;
+			top:-16px;
+		}
+		to{
+			transform:scale(1.2);
+			left:-14px;
+			top:-16px;
+		}
+	}
+	@-o-keyframes kep{
+		from{
+			transform:scale(1);
+			left: -12px;
+			top: -14px;
+		}
+		80%{
+			transform:scale(1.2);
+			left:-14px;
+			top:-16px;
+		}
+		to{
+			transform:scale(1.2);
+			left:-14px;
+			top:-16px;
+		}
+	}
+}

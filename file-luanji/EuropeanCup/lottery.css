@@ -1,0 +1,279 @@
+body,
+ul,
+ol,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+table,
+td,
+img,
+div,
+dl,
+dt,
+dd {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+body {
+  color: #fff;
+  font-size: 0.21875rem;
+  font-family: "Microsoft YaHei";
+}
+ul,
+ol {
+  list-style-type: none;
+}
+select,
+input,
+img,
+select {
+  vertical-align: middle;
+}
+input {
+  font-size: 0.40625rem;
+  outline: none;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+  outline: none;
+}
+a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.clear {
+  clear: both;
+}
+img {
+  display: block;
+  width: 100%;
+}
+/*================start============*/
+.container {
+  width: 100%;
+}
+.wrap {
+  position: relative;
+}
+h1 {
+  width: 100%;
+  height: 1.84375rem;
+  text-align: center;
+  background-color: #373737;
+  font-size: 0.46875rem;
+  line-height: 1.84375rem;
+  font-weight: bold;
+}
+.footBall {
+  width: 2.15625rem;
+  height: 2.125rem;
+  position: absolute;
+  left: 3.90625rem;
+  top: 8.96875rem;
+  z-index: 5;
+}
+.ballBg {
+  position: absolute;
+  left: 3.03125rem;
+  top: 9.1875rem;
+  width: 4.625rem;
+  height: 3.125rem;
+}
+.btn {
+  width: 7.1875rem;
+  height: 1.25rem;
+  background-color: #ff7200;
+  text-align: center;
+  font-size: 0.46875rem;
+  line-height: 1.25rem;
+  border-radius: 0.078125rem;
+  position: absolute;
+  left: 1.40625rem;
+  bottom: 1.25rem;
+  letter-spacing: 2px;
+}
+.popup {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 20;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.alert {
+  width: 5.3125rem;
+  overflow: hidden;
+  text-align: center;
+  display: none;
+  font-size: 0.46875rem;
+  background-color: #fff;
+  border-radius: 0.15625rem;
+  margin: 3.125rem auto 0;
+  padding: 0.46875rem 0.78125rem;
+}
+.alert1 h3 {
+  margin: 0.46875rem 0;
+}
+.alert h3,
+h4 {
+  color: #ff7200;
+  line-height: 1.5;
+  font-size: 0.375rem;
+}
+.alert2 .smile {
+  margin-bottom: 0.234375rem;
+}
+.smile {
+  width: 2.34375rem;
+  margin: 0 auto;
+}
+.alert .button,
+.alert2 .button2 {
+  width: 100%;
+  height: 1.25rem;
+  background-color: #ff7200;
+  line-height: 1.25rem;
+  border-radius: 0.078125rem;
+}
+.alert2 .button2 {
+  margin-top: 0.234375rem;
+}
+.alert2 .user {
+  display: none;
+  font-size: 0.40625rem;
+  color: #ff7200;
+  line-height: 0.546875rem;
+  text-align: left;
+}
+.alert2 .user .add {
+  padding-bottom: 0.46875rem;
+}
+.alert2 .user input {
+  border: none;
+  outline: none;
+  width: 3.90625rem;
+  background-color: #fff;
+  display: inline-block;
+  border-bottom: 1px solid #333;
+}
+.user .tel {
+  margin: 0.234375rem 0;
+}
+.act {
+  display: block;
+}
+.run1 {
+  animation: run1 1s linear forwards;
+  -webkit-animation: run1 1s linear forwards;
+}
+.run2 {
+  animation: run2 1s linear forwards;
+  -webkit-animation: run2 1s linear forwards;
+}
+.run3 {
+  animation: run3 1s linear forwards;
+  -webkit-animation: run3 1s linear forwards;
+}
+.run4 {
+  animation: run4 1s linear forwards;
+  -webkit-animation: run4 1s linear forwards;
+}
+@keyframes run1 {
+  0% {
+    left: 3.90625rem;
+    top: 8.96875rem;
+  }
+  100% {
+    left: 3.046875rem;
+    top: 1.875rem;
+    transform: rotate(900deg);
+  }
+}
+@-webkit-keyframes run1 {
+  0% {
+    left: 3.90625rem;
+    top: 8.96875rem;
+  }
+  100% {
+    left: 3.046875rem;
+    top: 1.875rem;
+    -webkit-transform: rotate(900deg);
+  }
+}
+@keyframes run2 {
+  0% {
+    left: 3.90625rem;
+    top: 8.96875rem;
+  }
+  100% {
+    left: 6.5625rem;
+    top: 1.875rem;
+    transform: rotate(900deg);
+  }
+}
+@-webkit-keyframes run2 {
+  0% {
+    left: 3.90625rem;
+    top: 8.96875rem;
+  }
+  100% {
+    left: 6.5625rem;
+    top: 1.875rem;
+    -webkit-transform: rotate(900deg);
+  }
+}
+@keyframes run3 {
+  0% {
+    left: 3.90625rem;
+    top: 8.96875rem;
+  }
+  100% {
+    left: 1.25rem;
+    top: 3.75rem;
+    transform: rotate(900deg);
+  }
+}
+@-webkit-keyframes run3 {
+  0% {
+    left: 3.90625rem;
+    top: 8.96875rem;
+  }
+  100% {
+    left: 6.5625rem;
+    top: 3.75rem;
+    -webkit-transform: rotate(900deg);
+  }
+}
+@keyframes run4 {
+  0% {
+    left: 3.90625rem;
+    top: 8.96875rem;
+  }
+  100% {
+    left: 4.8125rem;
+    top: 3.75rem;
+    transform: rotate(900deg);
+  }
+}
+@-webkit-keyframes run4 {
+  0% {
+    left: 3.90625rem;
+    top: 8.96875rem;
+  }
+  100% {
+    left: 4.8125rem;
+    top: 3.75rem;
+    -webkit-transform: rotate(900deg);
+  }
+}

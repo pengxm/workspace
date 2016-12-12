@@ -1,0 +1,114 @@
+/* -------------------------------------------------- */
+/* 
+ Copyright @ 360duohui.com 
+ Date: 2014-11-11 
+ */
+html,body,div,span,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,address,big,cite,code,del,em,font,img,ins,small,strong,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend {
+	margin: 0;
+	padding: 0;
+}
+@font-face {
+	font-family:'fz-EL';
+	src:url('STXIHEI.TTF') format('truetype');
+}
+body {
+  /*   font-size:62.5%; */
+	font-family:'冬青黑体简体中文',Hiragino Sans GB W3;
+	color:#313131;
+	-webkit-text-size-adjust: none;
+}
+/* .bf0{
+   background:#efeff4;
+} */
+.nss_bf{
+   background:#0eb8f7;
+}
+*{  -webkit-tap-highlight-color:rgba(0,0,0,0);
+    -webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+	margin:0;
+	padding:0;
+}
+
+ol,ul,li {
+	list-style: none;
+}
+
+:focus {
+	outline: 0;
+}
+
+a{
+	border: 0;
+	text-decoration:none;
+}
+
+a:hover {
+    text-decoration: none;
+	background:none;
+}
+
+a,button,input{-webkit-tap-highlight-color:rgba(255,0,0,0);}
+
+img {
+	vertical-align: middle;
+	border:none;
+}
+
+table {
+	empty-cells: show;
+	border-collapse:collapse;
+}
+
+ins {
+	text-decoration: none;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+em,i{
+	font-style: normal;
+}
+
+input{
+	outline:none;
+}
+h1,h2,h3,h4,h5,h6,th{
+    font-weight:normal;
+}
+
+.hide{	 
+  overflow:hidden; 
+  white-space:nowrap;
+  text-overflow:ellipsis; 
+  -o-text-overflow: ellipsis; 
+}
+
+a,button,input{-webkit-tap-highlight-color:rgba(255,0,0,0);}
+/* 全局 */
+
+/* 购物车 */
+/****
+******响应式三个断点效果*****
+*****/
+
+@media screen and (min-width:480px)and (max-width:640px) {
+	.wrapmain,.wrapmain_content,#wrapper_BrandMenu,#wrapper_ThreeMenu,body{
+		font-size: 21px
+	}
+}
+
+@media screen and (max-width:480px) {
+	.wrapmain,.wrapmain_content,#wrapper_BrandMenu,#wrapper_ThreeMenu,body{
+		font-size: 15px
+	}
+}
+@media screen and (min-width:640px){
+	.wrapmain,.wrapmain_content,#wrapper_BrandMenu,#wrapper_ThreeMenu,body{
+		font-size: 30px
+	}
+}

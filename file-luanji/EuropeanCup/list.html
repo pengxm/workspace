@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+    <title>活动</title>
+    <link rel="stylesheet" href="list.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="banner"><img src="images/titBanner_01.png"></div>
+      <div class="wrap"><img src="images/bg_02.png" alt="" class="bg">
+        <h1>比分竞猜</h1>
+        <ul class="team">
+          <li class="left"><img src="images/FranceFlag_03.png" alt="" class="flag flagLeft">
+            <h2>法国</h2><img src="images/teamH_07.png" class="court">
+            <input type="text" class="txt">
+          </li>
+          <li class="center">
+            <p>VS</p><span>:</span>
+          </li>
+          <li class="right"><img src="images/RomaniaFlag_03.png" alt="" class="flag flagRight">
+            <h2>法国</h2><img src="images/teamV_07.png" class="court">
+            <input type="text" class="txt">
+          </li>
+        </ul>
+        <div class="footer">
+          <button class="btn">提交</button><a href="javascript:;">中奖查询</a><a href="javascript:;">流量充值</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="jquery-1.11.2.min.js"></script>
+<script src="phoneauto.js"></script>
+<script charset="utf-8">
+  $(function(){
+    function getvl(name) {
+        var reg = new RegExp("(^|\\?|&)"+ name +"=([^&]*)(\\s|&|$)", "i");
+        if (reg.test(location.href)) return unescape(RegExp.$2.replace(/\+/g, " "));
+        return "";
+    };
+    var flagNum = getvl('flag');
+    if(flagNum == 1) {
+        $('.flagLeft').attr('src', 'images/rs_07.png');
+        $('.left h2').html('瑞士');
+        $('.flagRight').attr('src', 'images/bl_07.png');
+        $('.right h2').html('波兰');
+    }
+
+    if(flagNum == 2) {
+        $('.flagLeft').attr('src', 'images/wes_12.png');
+        $('.left h2').html('威尔士');
+        $('.flagRight').attr('src', 'images/beel_12.png');
+        $('.right h2').html('北爱尔兰');
+    }
+
+    if(flagNum == 3) {
+        $('.flagLeft').attr('src', 'images/kldy_12.png');
+        $('.left h2').html('克罗地亚');
+        $('.flagRight').attr('src', 'images/pty_12.png');
+        $('.right h2').html('葡萄牙');
+    }
+
+    if(flagNum == 4) {
+        $('.flagLeft').attr('src', 'images/fg_12.png');
+        $('.left h2').html('法国');
+        $('.flagRight').attr('src', 'images/eel_12.png');
+        $('.right h2').html('爱尔兰');
+    }
+
+    if(flagNum == 5) {
+        $('.flagLeft').attr('src', 'images/dg_16.png');
+        $('.left h2').html('德国');
+        $('.flagRight').attr('src', 'images/slfk_16.png');
+        $('.right h2').html('斯洛伐克');
+    }
+});
+</script>

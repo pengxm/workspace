@@ -1,0 +1,377 @@
+@charset "utf-8";
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+}
+
+body {
+    color: #fff;
+    font: 14px/1.5 "微软雅黑";
+    overflow: hidden;
+    background: #666;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+}
+
+:focus {
+    outline: none;
+}
+a { color: #fff; text-decoration: none; }
+a:hover { color: #fff; text-decoration: none; }
+ins {
+    text-decoration: none;
+}
+img {
+    width: 100%;
+    display: block;
+}
+del {
+    text-decoration: line-through;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+html { font-size: 100px; }
+
+.container {
+    width: 100%;
+    overflow: hidden;
+}
+.wrap {
+    width: 100%;
+    padding: 0 .2rem;
+    box-sizing: border-box;
+}
+.hand {
+    width: 2rem;
+    margin: 0 auto;
+}
+.tab {
+    color: #fff;
+    overflow: hidden;
+}
+.ulTab {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    z-index: 90;
+    margin-top: .1rem;
+}
+.ulTab li {
+    display: inline-block;
+    font:bold .16rem "微软雅黑";
+    background: #ffbe04;
+    padding: .05rem .1rem;
+    -moz-transform: skewX(-20deg);
+    -webkit-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+    cursor: pointer;
+    border-radius: .05rem;
+}
+.divTab {
+    display: none;
+    padding-top: .1rem;
+}
+.divTab li { font: .14rem/1.5 '微软雅黑'; }
+.prizeRecord {
+    width: 100%;
+    height: 125px;
+    overflow: hidden;
+    position: relative;
+}
+.prizeRecord ul {
+    width: 100%;
+    padding-top: .1rem;
+    overflow: hidden;
+    position: absolute;
+    left:0;
+    top: 0;
+}
+dt {
+    width: 100%;
+    padding: .03rem 0 .03rem .1rem;
+    color: #e62d2d;
+    font-size: .16rem;
+    background: url('images/narrow_03.png') left center no-repeat;
+    box-sizing: border-box;
+}
+dd {
+    font: .14rem/1.5 "微软雅黑";
+    padding: .1rem 0 .1rem .1rem;
+    box-sizing: border-box;
+}
+.popup {
+    left: 0;
+    top: 0;
+    z-index: 99;
+    color: #e62d2d;
+    overflow: hidden;
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+    background: rgba(0,0,0,.4);
+}
+.alert {
+    width: 250px;
+    margin: 1rem auto 0;
+    background: #fff;
+    padding: .1rem 0;
+    text-align: center;
+    border-radius: .15rem;
+    overflow: hidden;
+}
+#prizeTxt {
+    font: normal .16rem '微软雅黑';
+}
+.smile {
+    width: 1rem;
+    margin: 0 auto .1rem;
+}
+.btn {
+    color: #fff;
+    width: 1.2rem;
+    display: block;
+    cursor: pointer;
+    font-size: .18rem;
+    background: #e62d2d;
+    border-radius: .1rem;
+    margin: .05rem auto 0;
+    padding: .05rem .1rem;
+}
+.act { display: block; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -ms-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+}
+.wobble {
+    -webkit-animation-name: wobble;
+    animation-name: wobble;
+    -moz-animation-name: wobble;
+    -ms-animation-name: wobble;
+    -o-animation-name: wobble;
+}
+@-webkit-keyframes wobble {
+    from {
+        -webkit-transform: none;
+        transform: none;
+    }
+    15% {
+        -webkit-transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+        transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+    }
+    30% {
+        -webkit-transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+        transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+    }
+    45% {
+        -webkit-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+        transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+    }
+
+    60% {
+        -webkit-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+        transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+    }
+
+    75% {
+        -webkit-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+        transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+    }
+
+    to {
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+@-moz-keyframes wobble {
+    from {
+        -moz-transform: none;
+        transform: none;
+    }
+    15% {
+        -moz-transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+        transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+    }
+    30% {
+        -moz-transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+        transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+    }
+    45% {
+        -moz-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+        transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+    }
+
+    60% {
+        -moz-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+        transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+    }
+
+    75% {
+        -moz-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+        transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+    }
+
+    to {
+        -moz-transform: none;
+        transform: none;
+    }
+}
+@-ms-keyframes wobble {
+    from {
+        -ms-transform: none;
+        transform: none;
+    }
+    15% {
+        -ms-transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+        transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+    }
+    30% {
+        -ms-transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+        transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+    }
+    45% {
+        -ms-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+        transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+    }
+
+    60% {
+        -ms-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+        transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+    }
+
+    75% {
+        -ms-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+        transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+    }
+
+    to {
+        -ms-transform: none;
+        transform: none;
+    }
+}
+@-o-keyframes wobble {
+    from {
+        -o-transform: none;
+        transform: none;
+    }
+    15% {
+        -o-transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+        transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+    }
+    30% {
+        -o-transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+        transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+    }
+    45% {
+        -o-transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+        transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+    }
+
+    60% {
+        -o-transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+        transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+    }
+
+    75% {
+        -o-transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+        transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+    }
+
+    to {
+        -o-transform: none;
+        transform: none;
+    }
+}
+@keyframes wobble {
+    from {
+        transform: none;
+    }
+    15% {
+        transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+    }
+    30% {
+        transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+    }
+    45% {
+        transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+    }
+    60% {
+        transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+    }
+    75% {
+        transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+    }
+    to {
+        transform: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

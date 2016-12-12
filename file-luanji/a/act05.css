@@ -1,0 +1,34 @@
+#divLtr {
+	width: 100%;
+	font-size: 16px;
+	line-height: 22px;
+	float: left;
+}
+
+.bkImg {
+	display: block;
+}
+
+.line {
+	width: 85%;
+	margin: 0px auto;
+	padding: 10px 0;
+	word-wrap: break-word;
+	word-break: break-all;
+}
+
+.title {
+	font-weight: bold;
+	font-size: 18px;
+}
+
+p {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 3em;
+	color: #131313;
+}
+
+#btnSubmit {
+	font-size: 3em;
+    color: #131313;
+}
