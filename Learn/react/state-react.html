@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src = "react-min/build/react.js"></script>
+    <script src = "react-min/build/react-dom.js"></script>
+    <script src="http://static.runoob.com/assets/react/browser.min.js"></script>
+</head>
+<body>
+<div id="container"></div>
+</body>
+</html>
+<script type="text/babel">
+/*    var LikeButton = React.createClass({
+        getInitialState : function() {
+            return {
+                liked: false
+            }
+        },
+        handleClick : function(event){
+            event.stopPropagation();
+            event.preventDefault();
+            this.setState({liked : !this.state.liked});
+            this.refs.oSpan.style.display = this.state.liked ? 'block' : 'none';
+        },
+        render : function(){
+            var text = this.state.liked ? 'like' : 'love';
+            return (
+                    <div>
+                        <p onClick={this.handleClick}>if you {text} me, click to toggle!</p>
+                        <span ref="oSpan">xxxxxxx</span>
+                    </div>
+            )
+        }
+
+    });
+    ReactDOM.render(
+            <LikeButton />,
+            document.getElementById('container')
+    )*/
+
+    var Content = React.createClass({
+        render : function(){
+            return (
+                    <div>
+                        <button onClick={this.props.click}>click</button>
+                        <p>{this.props.txt}</p>
+                    </div>
+            )
+        }
+
+    });
+    var HelloMsg = React.createClass({
+       getInitialState : function(){
+            return {
+                value : true
+            }
+       } ,
+        handleClick : function(){
+            this.setState({
+                value : !this.state.value
+            })
+        },
+        render : function(){
+            var value = this.state.value ? 'hello' : 'hi';
+            return (
+                    <Content  txt={value} click={this.handleClick}/>
+            )
+        }
+    });
+    ReactDOM.render(
+            <HelloMsg />,
+            document.getElementById('container')
+    )
+</script>

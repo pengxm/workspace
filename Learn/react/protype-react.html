@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>protype</title>
+    <script src = "react-min/build/react.js"></script>
+    <script src = "react-min/build/react-dom.js"></script>
+    <script src="http://static.runoob.com/assets/react/browser.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
+<script type="text/babel">
+    var MyTitle = React.createClass({
+        getDefaultProps : function(){
+            return {
+                title : 'hello world'
+            }
+        },
+
+
+        render: function() {
+            return <h1> {this.props.title} </h1>;
+        }
+    });
+    var data = 123;
+    ReactDOM.render(
+            <MyTitle />,
+            document.getElementById('container')
+    );
+
+
+
+/*    $(function(){
+
+        (function(){
+            function Silde(parentBox, childBox, circleBox, circle) {
+                this.parentBox = parentBox;
+                this.childBox = childBox;
+                this.circleBox = circleBox;
+                this.circle = circle;
+            }
+
+            Silde.prototype.slide = function () {
+                var _this = this;
+                var num = 0;
+                var numLi = $(_this.childBox).length;
+                var circle = 0;
+                var $w = 240;
+                var timer = null;
+                var oId = 1;
+
+                $(_this.circle).click(play);
+                if(numLi <= 1){
+                    $(_this.circle).hide();
+                    clearInterval(timer);
+
+                } else if(numLi === 3){
+                    timer = setInterval(play, 4000);
+                    if ($(_this.childBox).children('img').load){
+                        $(_this.childBox).eq(0).clone(true).attr('id','picdiv'+oId).appendTo($(_this.parentBox)).show();
+                        oId += 1;
+                    }
+                    $(_this.circleBox).append('<li class="lb-circle"></li><li class="lb-circle"></li>');
+                    $(_this.parentBox).mouseout(function () {
+                        timer = setInterval(play, 4000);
+                    });
+                } else if(numLi === 2){
+                    timer = setInterval(play, 4000);
+                    if ($(_this.childBox).children('img').load){
+                        $(_this.childBox).eq(0).clone(true).attr('id','picdiv'+oId).appendTo($(_this.parentBox)).show();
+                        oId += 1;
+                    }
+                    $(_this.circleBox).append('<li class="lb-circle"></li>');
+                    $(_this.parentBox).mouseout(function () {
+                        timer = setInterval(play, 4000);
+                    });
+                }
+                function play() {
+                    num++;
+                    circle++;
+                    if (num > numLi) {
+                        $(_this.parentBox).css({'left': 0});
+                        num = 1;
+                    }
+                    if (circle > (numLi - 1)) {
+                        circle = 0;
+                    }
+                    $(_this.parentBox).stop().animate({'left': num * -$w}, 500);
+                    $(_this.circle).eq(circle).addClass('act').siblings().removeClass('act');
+                }
+
+
+                $(_this.parentBox).mouseover(function () {
+                    clearInterval(timer);
+                });
+
+                $(_this.circle).click(function () {
+                    var index = $(this).index();
+                    circle = index;
+                    num = index;
+                    $(_this.parentBox).stop().animate({'left': index * -$w}, 500);
+                    $(this).addClass('act').siblings().removeClass('act');
+                });
+
+
+            };
+            window.Silde = Silde;
+        })();
+
+
+        var s = new Silde('.r-tit-img .r-lb', '.lb-img', '.r-lb-c', '.r-lb-c>li');
+        s.slide();
+    });*/
+</script>

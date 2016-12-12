@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    class Animal{
+        constructor (name){
+            this.name = name;
+        }
+        speak(){
+            console.log(this.name + ' hello world')
+        }
+    }
+    var animal = new Animal('cat');
+    animal.speak();
+</script>

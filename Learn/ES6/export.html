@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>export</title>
+    <script src = "../react/react-min/build/react.js"></script>
+    <script src = "../react/react-min/build/react-dom.js"></script>
+    <script src="http://static.runoob.com/assets/react/browser.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
+<script type="text/babel">
+    class RepeatLi extends Component{
+  render(){
+    return (
+      <ol>
+      {
+        this.props.children.map((child)=>{return <li>{child}</li>})
+      }
+      </ol>
+    );
+  }
+}
+class RepeatArray extends Component{
+  constructor() {
+    super();
+  }
+  render(){
+    return (
+      <div>
+
+      <RepeatLi>
+        <span>hello</span>
+        <span>world</span>
+      </RepeatLi>
+
+      </div>
+    );
+  }
+}
+export default RepeatArray;
+</script>

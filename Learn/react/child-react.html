@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>children</title>
+    <script src = "react-min/build/react.js"></script>
+    <script src = "react-min/build/react-dom.js"></script>
+    <script src="http://static.runoob.com/assets/react/browser.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
+<script type="text/babel">
+    var NoteList = React.createClass({
+        render : function(){
+            return (
+                <ol>
+                    {
+                        React.Children.map(this.props.children, function(child){
+                            return <li>{child}</li>;
+                        })
+                    }
+                </ol>    
+            )
+        }
+    });
+    ReactDOM.render(
+        <NoteList>
+            <span>hello</span>
+            <span>world</span>
+        </NoteList>,
+        document.getElementById('container')    
+    )
+</script>

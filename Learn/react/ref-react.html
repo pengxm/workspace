@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ref</title>
+    <script src = "react-min/build/react.js"></script>
+    <script src = "react-min/build/react-dom.js"></script>
+    <script src="http://static.runoob.com/assets/react/browser.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
+<script type="text/babel">
+    var MyComponent = React.createClass({
+        handleClick: function() {
+//            this.refs.myTextInput.focus();
+
+        },
+        handleChang : function(){
+            this.refs.oP.innerHTML = 'cxdd';
+        },
+        render: function() {
+            return (
+                    <div>
+                        <input type="text" ref="myTextInput" onChange={this.handleChang}/>
+                        <p ref="oP"></p>
+                        <input type="button" value="Focus the text input" onClick={this.handleClick} />
+                        <span ref="oSpan">hello world</span>
+                    </div>
+            );
+        }
+    });
+
+    ReactDOM.render(
+            <MyComponent />,
+            document.getElementById('container')
+    );
+</script>
