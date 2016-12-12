@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src = "../../Learn/react/react-min/build/react.js"></script>
+    <script src = "../../Learn/react/react-min/build/react-dom.js"></script>
+    <script src="http://static.runoob.com/assets/react/browser.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #2e2e2e;
+            font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
+        }
+        .box {
+            width: 400px;
+            height: 300px;
+            border: 1px solid #ccc;
+            margin: 50px auto 0;
+            padding: 1em;
+            background-color: #f3f3f3;
+        }
+        .box a,.box h2, h3 {
+            font-size: 16px;
+            color: #333;
+            text-align: right;
+        }
+        .content {
+            padding: .5em;
+            border: 1px solid #ccc;
+            margin: 1em 0;
+        }
+        .txt {
+            display: none;
+        }
+        .content .cont {
+            border: 0;
+            font-size: 14px;
+            word-wrap: break-word;
+            line-height: 18px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            outline: none;
+            background: transparent;
+            width: 100%;
+            height: 68px;
+            resize: none;
+        }
+        .footer {
+            text-align: right;
+            overflow: hidden;
+            margin-top: 1em;
+        }
+        .box .btn {
+            background: #ffc09f;
+            color: #fff;
+            border: 1px solid #fbbd9e;
+            box-shadow: none;
+            cursor: pointer;
+            display: inline-block;
+            height: 28px;
+            line-height: 29px;
+            width: 90px;
+            font-size: 14px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .box .btn-light {
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
+<script type="text/babel">
+    /*
+    *  消息发布    三种状态
+    *  获取焦点 onFocus      失去焦点 onBlur      内容变化  change
+    */
+
+    var WebMsg = React.createClass({
+       getInitialState : function(){
+           return {
+               content : '',
+               num : 0
+           }
+       } ,
+        /* 获取焦点 */
+        handleFocus : function(){
+            this.refs.news.style.display =  'none';
+            this.refs.oPrompt.style.display =  'block';
+        },
+        /* 失去焦点 */
+        handleBlur : function(){
+            this.refs.news.style.display =  'block';
+            this.refs.oPrompt.style.display =  'none';
+        },
+        /* 内容改变 */
+        handleChange : function(e){
+            this.setState({
+                content: e.target.value
+            });
+        },
+        handleClick : function(e){
+            e.stopPropagation();
+            e.preventDefault();
+            this.state.num ++;
+            var oLi = document.createElement('li');
+            oLi.innerHTML = this.state.num + '. ' + this.state.content;
+            this.refs.footcon.append(oLi);
+        },
+        render : function(){
+            var textValue = this.state.content.length;
+            var disabledS = (textValue > 0 && textValue <= 140) ? ' btn-light' : '';
+            return(
+                    <div className="box">
+                        <div className="tit">
+                            <h3 ref="news">
+                                <a href="javascript:;">特朗普胜任美总统</a>
+                            </h3>
+                            <h2 className="txt" ref="oPrompt"><span>{textValue > 140 ? '超出' : '还可以输入'}</span><span>{textValue > 140 ? textValue - 140 : 140 - textValue}</span>字</h2>
+                        </div>
+                        <div className="content">
+                            <textarea ref="oContent" name="con" className="cont" onFocus={this.handleFocus} onBlur={this.handleBlur} onChange={this.handleChange}></textarea>
+                        </div>
+                        <div className="footer">
+                            <a href="javascript:;" className={'btn' + disabledS} onClick ={ (textValue > 0 && textValue <= 140) ? this.handleClick : ''}>发布</a>
+                        </div>
+                        <ul ref="footcon"></ul>
+                    </div>
+            )
+        }
+    });
+
+
+
+
+    ReactDOM.render(
+            <WebMsg />,
+            document.getElementById('container')
+    )
+</script>

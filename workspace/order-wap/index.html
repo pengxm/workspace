@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="format-detection" content="telephone = no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+    <title>order</title>
+    <link rel="stylesheet" href="css/order.css">
+
+</head>
+<body>
+    <div class="order-container">
+        <div class="logo-con clearfix">
+            <a class="logo" href="javascript:;"><img src="images/wo-logo_03.png" alt="" /></a>
+            <a href="javascript:;">登录沃邮箱</a>
+        </div>
+        <header>
+            <img src="images/tit-img_01.jpg" alt="">
+        </header>
+        <div class="order-content">
+            <div class="order-tit">
+                <h2>选择套餐</h2>
+                <span class="send-icon"><img src="images/send-icon_07.png" alt=""></span>
+                <p>时间：2016年12月1日—12月8日</p>
+                <span class="order-rule"><a href="javascript:;">活动规则</a></span>
+            </div>
+            <div class="order-center">
+                <dl>
+                    <dt>
+                        <input id="standard" class="radio" type="radio" name="order-radio" />
+                        <label for="standard">标准版: <span class="color-txt">送1G流量日包</span><span class="checked-icon"></span></label>
+                        <span class="money">6元/月</span>
+                    </dt>
+                    <dd>
+                        <span>10G容量</span>
+                        <span>30M附件</span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <input id="major" class="radio" type="radio" name="order-radio" />
+                        <label for="major">专业版: <span class="color-txt">送10元话费</span><span class="checked-icon"></span></label>
+                        <span class="money">15元/月</span>
+                    </dt>
+                    <dd>
+                        <span>无限容量</span>
+                        <span>50M附件</span>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <footer class="order-footer">
+            <form action="">
+                <dl class="clearfix">
+                    <dt>请输入您的手机号：<span class="tel-txt"></span></dt>
+                    <dd><input class="tel" type="text" /></dd>
+                </dl>
+                <dl>
+                    <dt class="clearfix">验证码 <span class="validate-txt"></span></dt>
+                    <dd class="clearfix"><span class="validate-val"></span><input class="input-half validate-input" type="text" /></dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>请输入短信验证码：<span class="msg-txt"></span></dt>
+                    <dd class="clearfix"><input class="msg-btn" value="获取短信验证码"/><input class="input-half" type="text" /></dd>
+                </dl>
+                <dl class="clearfix">
+                    <dt>请设置邮箱密码：<span class="pwd-txt"></span></dt>
+                    <dd><input class="pwd-value" type="password" placeholder="(6-16位数字或英文)"/></dd>
+                </dl>
+                <div class="submit-btn-div">
+                    <input class="submit-btn" type="submit" value="提 交">
+                </div>
+            </form>
+
+            <div class="ewm"><img src="images/ewm_07.jpg" alt=""></div>
+            <h3 class="ll-app">下载【流量银行】APP，即可成功获得1G流量日包<br/><a href="javascript:;">活动详情</a></h3>
+            <p class="copyright">本次活动最终解释权归联通宽带在线有限公司所有</p>
+        </footer>
+    </div>
+</body>
+</html>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/lock.js"></script>
+<script src="js/order.js"></script>

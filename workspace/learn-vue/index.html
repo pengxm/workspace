@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue</title>
+</head>
+<body>
+<div id="app">
+    <h2>编辑姓名：<input type="text" v-model="Name" /></h2>
+    <h2>姓名：{{Name}}</h2>
+    <hr />
+    <h2>编辑备注：<textarea v-model="Remark"></textarea></h2>
+    <h2>备注：{{Remark}}</h2>
+    <hr />
+
+    <input type="checkbox" id="basketball" value="篮球" v-model="Hobby">
+    <label for="basketball">篮球</label>
+    <input type="checkbox" id="football" value="足球" v-model="Hobby">
+    <label for="football">足球</label>
+    <input type="checkbox" id="running" value="跑步" v-model="Hobby">
+    <label for="running">跑步</label>
+    <br>
+    <h2>学生爱好： {{ Hobby }}</h2>
+
+    <hr />
+    <h2>户籍：{{ Huji }}</h2>
+    <select style="width:100px;" class="form-control" v-model="Huji">
+        <option>湖南</option>
+        <option>广东</option>
+        <option>北京</option>
+    </select>
+
+</div>
+</body>
+</html>
+<script src="vue/vue.js"></script>
+<script type="text/javascript">
+    //Model
+    var data = {
+        Name: '小明',
+        Age: 18,
+        School: '光明小学',
+        Hobby: [],
+        Remark: '三好学生',
+        Huji:""
+    };
+
+    //ViewModel
+    var vue = new Vue({
+        el: '#app',
+        data: data
+    });
+</script>

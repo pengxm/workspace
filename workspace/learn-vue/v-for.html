@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="value in values">姓名： {{value.Name}}  年龄：{{value.Age}}</li>
+    </ul>
+</div>
+</body>
+</html>
+<script src="vue/vue.js"></script>
+<script>
+
+
+    var vue = new Vue({
+        el : '#app',
+        data: {
+            values: [{ Name: "小明", Age: 20 }, { Name: "小刚", Age: 18 }, { Name: "小红", Age: 16 }]
+        }
+    })
+</script>

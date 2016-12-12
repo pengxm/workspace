@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container"></div>
+
+</body>
+</html>
+<script>
+
+    (function(){
+
+        showTime();
+        function addZero(i){
+            if(i < 10){
+                i = "0"+i;
+            }
+            return i;
+        }
+
+        function leftpad (str, len, ch) {
+            str = String(str);
+            var i = -1;
+            if (!ch && ch !== 0) ch = ' ';
+            len = len - str.length;
+            while (++i < len) {
+                str = ch + str;
+            }
+            return str;
+        }
+
+        function showTime(){
+            var nowTime = new Date();
+            var endTime = new Date("2016/12/10, 12:00:00");
+            var lefttime = parseInt((endTime.getTime() - nowTime.getTime()) / 1000);
+            var d = parseInt(lefttime / (24 * 60 * 60));
+            var h = parseInt(lefttime / (60 * 60) % 24);
+            var m = parseInt(lefttime / 60 % 60);
+            var s = parseInt(lefttime % 60);
+            /*h = addZero(h);
+            m = addZero(m);
+            s = addZero(s);*/
+            h = leftpad(h, 2, 0);
+            m = leftpad(m, 2, 0);
+            s = leftpad(s, 2, 0);
+            document.getElementById("container").innerHTML = "倒计时    " + d + "天" + h + "小时" + m + "分" + s + "秒";
+            if(lefttime<=0){
+                document.getElementById("container").innerHTML = "活动已结束";
+                return;
+            }
+            setTimeout(showTime,1000);
+        }
+
+
+
+
+
+
+
+    })();
+
+
+
+</script>

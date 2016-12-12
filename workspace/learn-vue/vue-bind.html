@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style type="text/css">
+        class1 {
+            padding:20px;
+        }
+        .backred {
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <h1>姓名：<label v-text="Name"></label></h1>
+    <h1>是否红领巾：<span class="class1" v-bind:class="{backred:IsBack}"><label v-if="IsBack">是</label></span></h1>
+    <h1>学校星级：<span v-bind:style="{color:SchoolLevel}">{{Start}}</span></h1>
+</div>
+
+<script src="vue/vue.js"></script>
+<script type="text/javascript">
+    //Model
+    var data = {
+        Name: '小明',
+        Age: 18,
+        School: '光明小学',
+        SchoolLevel: 'red',
+        IsBack:true,
+        Start: 'xxx'
+    };
+
+    //ViewModel
+    var vue = new Vue({
+        el: '#app',
+        data: data
+    });
+</script>
+</body>
+</html>

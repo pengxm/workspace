@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h1>姓名：<label v-text="Name"></label></h1>
+    <h1>是否已婚：<span v-if="IsMarry">是</span></h1>
+    <h1>大人or小孩：<span v-if="Age>18">大人</span><span v-else>小屁孩</span></h1>
+    <h1 v-html="School"></h1>
+</div>
+</body>
+</html>
+<script src="vue/vue.js"></script>
+<script type="text/javascript">
+    //Model
+    var data = {
+        Name: '小明',
+        IsMarry: true,
+        Age: 2,
+        School:'学校：光明小学'
+    };
+
+    //ViewModel
+    var vue = new Vue({
+        el: '#app',
+        data: data
+    });
+</script>

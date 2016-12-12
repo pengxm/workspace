@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>列表页</title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link href="css/common.css" rel="stylesheet"/>
+    <link href="css/i-list.css" rel="stylesheet"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+    <script src="js/common.js"></script>
+</head>
+<body>
+	<div class="pageWrap">
+		<header class="mui-row mui-bar searchGroup">
+			<a href="javascript:void(0);" class="mui-col-xs-2 mui-icon mui-icon-left-nav mui-text-center backBtn"></a>
+		    <div class="mui-col-xs-8 searchTxt">
+		        <input type="search" class="mui-input-clear" placeholder="请输入搜索内容">
+		    </div> 
+		    <a href="javascript:void(0);" class="mui-col-xs-2 mui-text-center">北京</a>
+		</header>
+		<div class="scrollPage">
+			<div class="mui-row mui-text-center listType">
+				<span class="mui-col-xs-3">综合</span>
+				<span class="mui-col-xs-3">评价</span>
+				<span class="mui-col-xs-3">
+					价格					
+				</span>
+				<span class="mui-col-xs-3">品牌<em class="mui-icon mui-icon-bars"></em></span>
+			</div>
+			<!--下拉刷新容器-->
+			<div id="refreshContainer" class="mui-content mui-scroll-wrapper listWrap">
+			    <div class="mui-scroll">
+				    <!--数据列表-->
+				    <ul class="listUl">
+				    	<li>
+				    		<a href="#">
+				    			<img src="images/search_normal.png" class="productImg"/>
+				    			<div class="productMsg">
+				    				<p class="productTit">【产品列表】产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍</p>
+				    				<p class="PriceWrap">
+				    					<span>¥ 25.00</span>
+				    					<span>起</span>
+				    					<span>满赠</span>
+				    				</p>
+				    				<span class="commentNum">100001条评论</span>
+				    				<span class="goodComment">90%好评</span>
+				    			</div>
+				    		</a>
+				    	</li>
+				    	<li>
+				    		<a href="#">
+				    			<img src="images/search_normal.png" class="productImg"/>
+				    			<div class="productMsg">
+				    				<p class="productTit">【产品列表】产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍</p>
+				    				<p class="PriceWrap">
+				    					<span>¥ 25.00</span>
+				    					<span>起</span>
+				    					<span>满赠</span>
+				    				</p>
+				    				<span class="commentNum">100001条评论</span>
+				    				<span class="goodComment">90%好评</span>
+				    			</div>
+				    		</a>
+				    	</li>
+				    	<li>
+				    		<a href="#">
+				    			<img src="images/search_normal.png" class="productImg"/>
+				    			<div class="productMsg">
+				    				<p class="productTit">【产品列表】产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍</p>
+				    				<p class="PriceWrap">
+				    					<span>¥ 25.00</span>
+				    					<span>起</span>
+				    					<span>满赠</span>
+				    				</p>
+				    				<span class="commentNum">100001条评论</span>
+				    				<span class="goodComment">90%好评</span>
+				    			</div>
+				    		</a>
+				    	</li>
+				    	<li>
+				    		<a href="#">
+				    			<img src="images/search_normal.png" class="productImg"/>
+				    			<div class="productMsg">
+				    				<p class="productTit">【产品列表】产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍</p>
+				    				<p class="PriceWrap">
+				    					<span>¥ 25.00</span>
+				    					<span>起</span>
+				    					<span>满赠</span>
+				    				</p>
+				    				<span class="commentNum">100001条评论</span>
+				    				<span class="goodComment">90%好评</span>
+				    			</div>
+				    		</a>
+				    	</li>
+				    	<li>
+				    		<a href="#">
+				    			<img src="images/search_normal.png" class="productImg"/>
+				    			<div class="productMsg">
+				    				<p class="productTit">【产品列表】产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍</p>
+				    				<p class="PriceWrap">
+				    					<span>¥ 25.00</span>
+				    					<span>起</span>
+				    					<span>满赠</span>
+				    				</p>
+				    				<span class="commentNum">100001条评论</span>
+				    				<span class="goodComment">90%好评</span>
+				    			</div>
+				    		</a>
+				    	</li>
+				    	<li>
+				    		<a href="#">
+				    			<img src="images/search_normal.png" class="productImg"/>
+				    			<div class="productMsg">
+				    				<p class="productTit">【产品列表】产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍产品介绍</p>
+				    				<p class="PriceWrap">
+				    					<span>¥ 25.00</span>
+				    					<span>起</span>
+				    					<span>满赠</span>
+				    				</p>
+				    				<span class="commentNum">100001条评论</span>
+				    				<span class="goodComment">90%好评</span>
+				    			</div>
+				    		</a>
+				    	</li>
+				    	
+				    </ul>
+			    </div>
+			</div>
+			
+			
+			
+			
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <script src = "../../Learn/react/react-min/build/react.js"></script>
+    <script src = "../../Learn/react/react-min/build/react-dom.js"></script>
+    <script src="http://static.runoob.com/assets/react/browser.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
+<script type="text/babel">
+
+    var imgData = [
+        {
+            "fileName": "1.jpg",
+            "title": "Heaven of time",
+            "desc": "Here he comes Here comes Speed Racer."
+        },
+        {
+            "fileName": "2.jpg",
+            "title": "Heaven of time",
+            "desc": "Here he comes Here comes Speed Racer."
+        },
+        {
+            "fileName": "3.jpg",
+            "title": "Heaven of time",
+            "desc": "Here he comes Here comes Speed Racer."
+        },
+        {
+            "fileName": "4.jpg",
+            "title": "Heaven of time",
+            "desc": "Here he comes Here comes Speed Racer."
+        },
+        {
+            "fileName": "5.jpg",
+            "title": "Heaven of time",
+            "desc": "Here he comes Here comes Speed Racer."
+        },
+        {
+            "fileName": "6.jpg",
+            "title": "Heaven of time",
+            "desc": "Here he comes Here comes Speed Racer."
+        },
+        {
+            "fileName": "7.jpg",
+            "title": "Heaven of time",
+            "desc": "Here he comes Here comes Speed Racer."
+        },
+        {
+            "fileName": "8.jpg",
+            "title": "Heaven of time",
+            "desc": "Here he comes Here comes Speed Racer."
+        },
+        {
+            "fileName": "9.jpg",
+            "title": "Heaven of time",
+            "desc": "Here he comes Here comes Speed Racer."
+        },
+        {
+            "fileName": "10.jpg",
+            "title": "Heaven of time",
+            "desc": "Here he comes Here comes Speed Racer."
+        }
+    ];
+    console.log(imgData.length);
+
+    imgData = (function getImg(imgData){
+        for(var i = 0, len = imgData.length; i < len; i++){
+            let singleImageData = imgData[i];
+            singleImageData.imageURL = 'images/'+singleImageData.fileName;
+            imgData[i] = singleImageData;
+        }
+        return imgData;
+    })(imgData);
+
+    // 图片组件
+    var ImgFigure = React.createClass({
+        render : function(){
+            return (
+                    <div>
+                        <figure className='img-figure'>
+                            <img src={this.props.data.imageURL} alt={this.props.data.title}/>
+                            <figcaption>
+                                <h2 className="img-title">{this.props.data.title}</h2>
+                                <div className="img-back" >
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+            )
+        }
+    });
+    // 控制器组件
+    var ControllerUnit = React.createClass({
+        render : function(){
+            return (
+                    <div>
+
+                    </div>
+            )
+        }
+    });
+
+
+    var App = React.createClass({
+        getInitialState : function(){
+            return {
+                on : false
+            }
+        },
+        render : function(){
+            var imgFigure = [];
+            var controllerUnits = [];
+            imgData.forEach(function(value, index){
+                imgFigure.push(<ImgFigure data={value} key={index}/>)
+            });
+            return (
+                    <section className="stage" ref="stage">
+                        <section className="img-sec">
+                            {imgFigure}
+                        </section>
+                        <nav className="controller-nav">
+                            {controllerUnits}
+                        </nav>
+                    </section>
+            )
+        }
+    });
+
+    ReactDOM.render(
+            <App />,
+            document.getElementById('container')
+    )
+
+</script>

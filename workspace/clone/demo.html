@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ES6</title>
+</head>
+<body>
+    <input id="search" type="text" name="search" />
+</body>
+</html>
+<script>
+
+    function queryData(text){
+        console.log('搜索 '+ text);
+    }
+
+    var input = document.getElementById('search');
+    input.addEventListener('keyup', function(event){
+        throttle(queryData, null, 500, this.value,1000);
+    });
+
+    function throttle(fn, context, delay, text, mustApplyTime){
+        clearTimeout(fn.timer);
+        fn._cur = Date.now();
+        if(!fn._start){
+            fn._start = fn._cur;
+        }
+        if(fn._cur - fn._start > mustApplyTime){
+            fn.call(context, text);
+            fn._start = fn._cur;
+        }else{
+            fn.timer = setTimeout(function(){
+                fn.call(context,text);
+            }, delay);
+        }
+    }
+
+
+
+
+
+    /*function settings() {
+        return { display: { color: 'red' }, keyboard: { layout: 'querty'} };
+    }
+    const { display: { color: displayColor }, keyboard: { layout: keyboardLayout }} = settings();
+    console.log(displayColor, keyboardLayout); // red querty
+
+    class Person {
+        constructor (name){
+            this.name = name;
+        }
+        speak (){
+            console.log('My name is '+this.name);
+        }
+    }
+    class People extends Person {
+        speak(){
+            super.speak();
+        }
+    }
+    const p = new People('ming');
+    console.log(p.speak());
+
+    /!*
+    *  Promise
+     *!/
+    function printAfterTimeout(string, timeout){
+        return new Promise((resolve, reject) => {
+                    setTimeout(function(){
+                        resolve(string);
+                    }, timeout);
+    });
+    }
+    printAfterTimeout('Hello ', 2e3).then((result) => {
+        console.log(result);
+        return true;
+    }).then((result) => {
+        //  第二个 result  是第一个函数return 的值
+        console.log(result);
+    });*/
+
+
+
+
+
+</script>
+<!--<script>
+    function settings() {
+        return {
+            display: {
+                color : 'red'
+            },
+            font: {
+                fontSize : '18px'
+            }
+        }
+    }
+    var tmp = settings();
+    var displayColor = tmp.display.color;
+    var fontSize = tmp.font.fontSize;
+    console.log(displayColor, fontSize);
+</script>-->

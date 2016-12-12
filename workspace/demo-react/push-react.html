@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>react</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+            list-style: none;
+        }
+        .container {
+            width: 500px;
+            height: 600px;
+            margin: 50px auto;
+            padding: 1em;
+            box-sizing: border-box;
+        }
+        header {
+            text-align: right;
+            overflow: hidden;
+        }
+        header p {
+            margin-bottom: 10px;
+        }
+        header p a {
+            font-size: 16px;
+        }
+        .content {
+            text-align: left;
+        }
+        .txt {
+            resize: none;
+            width: 100%;
+            padding: 1em;
+            box-sizing: border-box;
+            height: 200px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+        .text {
+            display: none;
+        }
+        .btn {
+            float: right;
+            color: #fff;
+            padding: 8px 20px;
+            background-color: silver;
+        }
+    </style>
+    <script src = "../../Learn/react/react-min/build/react.js"></script>
+    <script src = "../../Learn/react/react-min/build/react-dom.js"></script>
+    <script src="http://static.runoob.com/assets/react/browser.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
+<script type="text/babel">
+    class PushMsg extends React.Component{
+        getInitialState (){
+            return {
+                content: ""
+            }
+        }
+
+        handleFocus (e){
+            e.stopPropagation();
+            e.preventDefault();
+            this.refs.news.style.display = "none";
+            this.refs.text.style.display = "block";
+        }
+
+        handleBlur (e){
+            e.stopPropagation();
+            e.preventDefault();
+            this.refs.news.style.display = "block";
+            this.refs.text.style.display = "none";
+        }
+
+        handleChange (e){
+            this.setState ({
+                content: e.target.value
+            })
+        }
+
+        render (){
+            return(
+                    <div className="container">
+                        <header>
+                            <p ref="news">
+                                <a href="javascript:;">新闻热点</a>
+                            </p>
+                            <p className="text" ref="text"><span>{this.state.content.length > 140 ? "cc" : "xx"}</span><strong>{this.state.content.length > 140 ? this.state.content.length - 140 : 140 - this.state.content.length}</strong>字
+                            </p>
+                        </header>
+                        <div className="content">
+                            <textarea className="txt" onFocus={this.handleFocus.bind(this)} onChange={this.handleChange.bind(this)} onBlur={this.handleBlur.bind(this)} ></textarea>
+                            <input className="btn" type="button" value="发 布"/>
+                        </div>
+                        <footer>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </footer>
+                    </div>
+            )
+        }
+
+
+    }
+    ReactDOM.render(
+            <PushMsg />,
+            document.getElementById("container")
+    )
+</script>

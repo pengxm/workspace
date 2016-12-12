@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>
+        分享到微博代码，添加窗口关闭回调
+    </title>
+</head>
+<body>
+<div id="click">分享到微博</div>
+<script>
+    var shareWindow;//分享窗口
+    document.getElementById("click").onclick = function () {
+        var url = 'http://www.baidu.com';
+        var content = 'test';
+        var img = 'http://jidian-php-prod.oss-cn-hangzhou.aliyuncs.com/kinder-choc161108/static/photo/3941639e4102cfd730f5f0b882cc4b781478943874.jpeg';
+        var appkey = '';
+        shareToWeibo(url, content, img, appkey, function () {
+            var loop = setInterval(function () {
+                if (shareWindow.closed) {
+                    clearInterval(loop);
+                    alert('closed');
+                }
+            }, 1000);
+        });
+    };
+
+    function shareToWeibo(url, content, img, appkey, callback) {
+        callback = callback || function () {};
+        javascript:void((function (s, d, e) {
+            var f = 'http://v.t.sina.com.cn/share/share.php?';
+            var p = ['url=' + e(url), '&title=', e(content), '&appkey=' + appkey].join('');
+            if (img !== false) {
+                p += '&pic=' + img;
+            }
+            function a() {
+                shareWindow = window.open([f, p].join(''), 'mb', ['toolbar=0,status=0,resizable=1,width=620,height=450,left=', (s.width - 620) / 2, ',top=', (s.height - 450) / 2].join(''))
+                if (!shareWindow) {
+                }
+            }
+            if (/Firefox/.test(navigator.userAgent)) {
+                setTimeout(a, 0);
+            } else {
+                a();
+            }
+            callback();
+        })(screen, document, encodeURIComponent));
+    }
+</script>
+</body>

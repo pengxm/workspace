@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .clear{
+            clear: both;
+        }
+        .left{
+            float: left;
+        }
+        .ul{
+            padding: 0;
+
+            width: 300px;
+            height: 200px;
+            list-style-type: none;
+            border: 1px solid black;
+        }
+        .buywrap{
+            margin:0 60px;
+        }
+        li:hover{
+            background-color:royalblue;
+        }
+        li{
+            height: 30px;
+            cursor: pointer;
+            background-color: #eee;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            //具名函数封装，外部无法访问，当然除了IE8.
+            (function shoppingCartInit(){
+                //初始化
+                var ulObj=document.getElementsByTagName("ul");
+                var addAll=document.getElementById("buyAll");
+                var back=document.getElementById("back");
+                //部分功能重叠  0:点击左边  1：右边 ; history存储上次操作时dom状态,只能储存10次操作
+                var type;
+                ulObj[0].history=[ulObj[0].cloneNode(true)];
+                ulObj[1].history=[ulObj[1].cloneNode(true)];
+                ulObj=Array.prototype.slice.call(ulObj);
+
+                ulObj.forEach(translate);
+                addAll.onclick=buyAll;
+                back.onclick=backEvent;
+
+                function translate(item,index,arr){
+                    item.addEventListener("click",move,false);
+                    function move(e){
+                        var event=e||window.event;
+                        var target=event.target||event.srcElement;
+                        if(target.nodeName.toLocaleLowerCase()=="li"){
+                            target.parentElement.id=="percharse"?type=0:type=1;
+
+                            if(!type){
+                                ulObj[1].appendChild(target);
+
+                            }else{
+                                ulObj[0].appendChild(target)
+                            }
+                            history();
+                        }
+                    }
+
+
+                }
+                function buyAll(){
+                    if(!ulObj[0].children[0]){alert('没有商品')}
+                    var childLi=ulObj[0].children;
+                    for(var i=0;i<childLi.length;i++){
+                        var cloneLi=childLi[i].cloneNode(true);
+                        ulObj[1].appendChild(cloneLi);
+
+                    }
+                    ulObj[0].innerHTML="";
+                    history();
+                }
+                function backEvent(){
+                    var length=ulObj[0].history.length;
+                    var newLength=length==1?1:length-1;
+                    ulObj[0].history.length=newLength;
+                    ulObj[1].history.length=newLength;
+                    ulObj[0].innerHTML=ulObj[0].history[ulObj[0].history.length-1].innerHTML;
+                    ulObj[1].innerHTML=ulObj[1].history[ulObj[1].history.length-1].innerHTML;
+
+
+                }
+                function history(){
+                    if(ulObj[0].history.length>10){
+                        ulObj[0].history.shift();
+                        ulObj[1].history.shift();
+                    }
+
+                    ulObj[0].history.push(ulObj[0].cloneNode(true));
+                    ulObj[1].history.push(ulObj[1].cloneNode(true));
+                }
+
+
+            }())
+        }
+    </script>
+</head>
+<body>
+<div class="wrap">
+    <div class="buywrap left">
+        <ul class="ul" id="percharse">
+            <!--ja-->
+            <li num="1">商品一</li>
+            <li num="2">商品二</li>
+            <li num="3">商品三</li>
+            <li num="4">商品四</li>
+
+        </ul>
+        <button id="buyAll">全部添加</button>
+        <button id="back">返回</button>
+    </div>
+
+    <ul class="ul left" id="buy">
+
+    </ul>
+    <div class="clear"></div>
+</div>
+
+
+</body>
+</html>

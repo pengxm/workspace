@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>es6-cless</title>
+    <script src = "../../Learn/react/react-min/build/react.js"></script>
+    <script src = "../../Learn/react/react-min/build/react-dom.js"></script>
+    <script src="http://static.runoob.com/assets/react/browser.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
+<script type="text/babel">
+    'use strict';
+    class HelloMsg extends React.Component {
+
+        constructor (props){
+            super(props);
+            this.handleClick = this.handleClick.bind(this);
+            this.state = {
+                on : false
+            }
+        }
+        handleClick (e){
+            this.setState({
+               on : !this.state.on
+            });
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        render (){
+            var txt = this.state.on ? 'Fine' : 'Hello World';
+            return (
+                    <h1 onClick={this.handleClick}> {txt} </h1>
+            )
+        }
+    }
+
+
+    ReactDOM.render(
+            <HelloMsg />,
+            document.getElementById('container')
+    )
+
+</script>

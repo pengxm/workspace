@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <style type="text/css">
+        table thead tr th {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div style="padding:20px;" id="app">
+    <div class="panel panel-primary">
+        <div class="panel-heading">用户管理</div>
+        <table class="table table-bordered table-striped text-center">
+            <thead>
+            <tr>
+                <th>用户名</th>
+                <th>年龄</th>
+                <th>毕业学校</th>
+                <th>备注</th>
+            </tr>
+            </thead>
+            <tbody>
+            <template v-for="(row, index) in rows ">
+                <tr v-if="index>=(curpage-1)*pagesize&&index<curpage*pagesize">
+                    <td>{{row.Name}}</td>
+                    <td>{{row.Age}}</td>
+                    <td>{{row.School}}</td>
+                    <td>{{row.Remark}}</td>
+                </tr>
+            </template>
+            </tbody>
+        </table>
+    </div>
+    <nav style="float:right;">
+        <ul class="pagination pagination-lg">
+            <template v-for="page in Math.ceil(rows.length/pagesize)">
+                <li v-on:click="PrePage()" id="prepage" v-if="page==1" class="disabled"><a href="#">上一页</a></li>
+                <li v-if="page==1" class="active" v-on:click="NumPage(page, $event)"><a href="#">{{page}}</a></li>
+                <li v-else v-on:click="NumPage(page, $event)"><a href="#">{{page}}</a></li>
+                <li id="nextpage" v-on:click="NextPage()" v-if="page==Math.ceil(rows.length/pagesize)"><a href="#">下一页</a></li>
+            </template>
+        </ul>
+    </nav>
+</div>
+</body>
+</html>
+<script src="../../www/carPc/jquery-1.11.2.min.js"></script>
+<script src="vue/vue.js"></script>
+<script>
+    //Model
+    var data = {
+        rows: [
+            { Id: 1, Name: '小明', Age: 18, School: '光明小学', Remark: '三好学生' },
+            { Id: 2, Name: '小刚', Age: 20, School: '复兴中学', Remark: '优秀班干部' },
+            { Id: 3, Name: '吉姆格林', Age: 19, School: '光明小学', Remark: '吉姆做了汽车公司经理' },
+            { Id: 4, Name: '李雷', Age: 25, School: '复兴中学', Remark: '不老实的家伙' },
+            { Id: 5, Name: '韩梅梅', Age: 22, School: '光明小学', Remark: '在一起' },
+            { Id: 1, Name: '小明', Age: 18, School: '光明小学', Remark: '三好学生' },
+            { Id: 2, Name: '小刚', Age: 20, School: '复兴中学', Remark: '优秀班干部' },
+            { Id: 3, Name: '吉姆格林', Age: 19, School: '光明小学', Remark: '吉姆做了汽车公司经理' },
+            { Id: 4, Name: '李雷', Age: 25, School: '复兴中学', Remark: '不老实的家伙' },
+            { Id: 5, Name: '韩梅梅', Age: 22, School: '光明小学', Remark: '在一起' },
+            { Id: 1, Name: '小明', Age: 18, School: '光明小学', Remark: '三好学生' },
+            { Id: 2, Name: '小刚', Age: 20, School: '复兴中学', Remark: '优秀班干部' },
+            { Id: 3, Name: '吉姆格林', Age: 19, School: '光明小学', Remark: '吉姆做了汽车公司经理' },
+            { Id: 4, Name: '李雷', Age: 25, School: '复兴中学', Remark: '不老实的家伙' },
+            { Id: 5, Name: '韩梅梅', Age: 22, School: '光明小学', Remark: '在一起' },
+            { Id: 1, Name: '小明', Age: 18, School: '光明小学', Remark: '三好学生' },
+            { Id: 2, Name: '小刚', Age: 20, School: '复兴中学', Remark: '优秀班干部' },
+            { Id: 3, Name: '吉姆格林', Age: 19, School: '光明小学', Remark: '吉姆做了汽车公司经理' },
+            { Id: 4, Name: '李雷', Age: 25, School: '复兴中学', Remark: '不老实的家伙' },
+            { Id: 5, Name: '韩梅梅', Age: 22, School: '光明小学', Remark: '在一起' }
+        ],
+        pagesize: 6,
+        curpage:1//当前页的页码
+    };
+
+    console.log(document.body.clientWidth);
+    //ViewModel
+    var vue = new Vue({
+        el: '#app',
+        data: data,
+        methods: {
+            //上一页方法
+            PrePage: function (event) {
+                $(".pagination .active").prev().trigger("click");
+            },
+            //下一页方法
+            NextPage: function (event) {
+                $(".pagination .active").next().trigger("click");
+            },
+            //点击页码的方法
+            NumPage: function (num, event) {
+                if (this.curpage == num) {
+                    return;
+                }
+                this.curpage = num;
+                $(".pagination li").removeClass("active");
+                if (event.target.tagName.toUpperCase() == "LI") {
+                    $(event.target).addClass("active");
+                }
+                else {
+                    $(event.target).parent().addClass("active");
+                }
+                if (this.curpage == 1) {
+                    $("#prepage").addClass("disabled");
+                }
+                else {
+                    $("#prepage").removeClass("disabled");
+                }
+                if (this.curpage == Math.ceil(this.rows.length / this.pagesize)) {
+                    $("#nextpage").addClass("disabled");
+                }
+                else {
+                    $("#nextpage").removeClass("disabled");
+                }
+            }
+        }
+    });
+</script>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>无标题文档</title>h
+    <style>
+        #box {
+            width: 100%;
+            height: 400px;
+            background: black;
+            color: #fff;
+            font-size:40px;
+            line-height:400px;
+            text-align:center;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var oBox = document.getElementById('box');
+            var oDate = new Date();//获取当前时间;
+            oDate.setFullYear(2016,11,31);//自动进位；
+            oDate.setHours(0,0,0,0);
+
+            function countDown(){
+                //未来时间戳减去现在时间的时间戳;
+                var ms = oDate.getTime() - new Date().getTime();
+
+                //毫秒转换成秒
+                var oSec = parseInt(ms/1000);
+
+                //秒转换成天
+                var oDay = parseInt(oSec/86400);
+
+                //不到一天剩下的秒数;
+                oSec%=86400;
+
+                //转换成小时
+                var oHour = parseInt(oSec/3600);
+
+                //不到一小时剩下的秒数;
+                oSec%=3600;
+
+                //转换成分钟
+                var oMin = parseInt(oSec/60);
+
+                //不到一分钟剩下的秒数;
+                oSec%=60;
+
+                oBox.innerHTML = '距离2016年12月31日还有:'+oDay+'天'+oHour+'时'+oMin+'分'+oSec+'秒';
+            }
+            countDown();
+            setInterval(countDown,1000);
+        }
+    </script>
+</head>
+
+<body>
+<div id="box">距离2016年12月31日还有:xx天xx时xx分xx秒</div>
+</body>
+</html>

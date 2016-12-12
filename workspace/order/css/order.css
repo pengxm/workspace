@@ -1,0 +1,281 @@
+body,
+div,
+ul,
+li,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+textarea,
+select,
+p,
+dl,
+dt,
+dd,
+a,
+img,
+button,
+form,
+table,
+th,
+tr,
+td,
+tbody,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+s {
+    margin: 0;
+    padding: 0;
+    border: none;
+    list-style: none;
+}
+em,
+i {
+    font-style: normal;
+}
+strong {
+    font-weight: normal;
+}
+.clearfix:after {
+    content: "";
+    display: block;
+    visibility: hidden;
+    height: 0;
+    clear: both;
+}
+.clearfix {
+    zoom: 1;
+}
+ul,
+ol {
+    list-style-type: none;
+}
+select,
+input,
+img,
+select {
+    vertical-align: middle;
+}
+input {
+    font-size: 1.6rem;
+    outline: none;
+}
+a {
+    text-decoration: none;
+    color: #fff;
+    outline: none;
+    border: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.clear {
+    clear: both;
+}
+img {
+    display: block;
+    width: 100%;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #55038b;
+}
+/*=========reset-end=============*/
+/*====start============*/
+.order-container {
+    width: 100%;
+    color: #3e3e3e;
+    font-size: 1.6rem;
+    font-family: "微软雅黑";
+    overflow: hidden;
+}
+/*========order-content=======start=====*/
+.order-content {
+    width: 100%;
+    padding: 1rem .3rem 0;
+    box-sizing: border-box;
+}
+/*===============order-tit==========*/
+.order-tit {
+    position: relative;
+    width: 100%;
+}
+.order-tit h2 {
+    width: 21.1rem;
+    height: 4rem;
+    color: #fff;
+    font-weight: normal;
+    font-size: 1.8rem;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 3.5rem;
+    background: url("../images/package-bg_04.png") no-repeat center;
+    background-size: 100% 100%;
+}
+.send-icon {
+    position: absolute;
+    left: 0;
+    top: 3.2rem;
+    width: 4.9rem;
+    height: 5rem;
+}
+.order-tit p {
+    padding-left: 5.2rem;
+    margin-top: 1.2rem;
+    color: #ffff01;
+    font-size: 1.2rem;
+
+}
+.order-tit .order-rule {
+    position: absolute;
+    right: 0;
+    top: 4.8rem;
+    width: 7.7rem;
+    height: 2.3rem;
+    font-size: 1.2rem;
+    text-indent: .5rem;
+    line-height: 2.3rem;
+    background: url("../images/narrow_11.png") no-repeat center;
+    background-size: 100% 100%;
+}
+.order-tit .order-rule a {
+    display: block;
+    width: 100%;
+}
+/*===========order-center==========*/
+.order-center {
+    width: 100%;
+    padding: 1rem 1rem 1rem 1.5rem;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+.order-center dt {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.order-center .radio {
+    visibility: hidden;
+}
+.order-center .radio, .order-center .checked-icon {
+    width: 2.3rem;
+    height: 2.3rem;
+}
+.order-center .color-txt {
+    color: #ee2352;
+    font-weight: bold;
+}
+.order-center .checked-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url("../images/checked-false_20.png") no-repeat center;
+    background-size: 100% 100%;
+}
+.order-center .checked-icon-true {
+    background-image: url("../images/checked-true_16.png");
+}
+.order-center .money {
+    float: right;
+}
+.order-center dd {
+    padding-left: 3.5rem;
+    margin: .5rem 0 .8rem;
+}
+.order-center dd span {
+    padding:.5rem 1rem .5rem 3rem;
+    background: url("../images/capacity-icon_03.png") no-repeat left center;
+    background-size: 2.5rem 2.5rem;
+}
+.order-center dd span:nth-child(2){
+    background-image: url("../images/enclosure-icon_03.png");
+}
+/*========order-content=======end=====*/
+
+/*========order-footer=======start=====*/
+.order-footer {
+    width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    color: #fff;
+}
+.order-footer dt {
+    margin: 1rem 0 .5rem;
+    font-size: 1.4rem;
+
+}
+.order-footer dt span {
+    float: right;
+    color: #db0052;
+    display: none;
+}
+.order-footer dd input {
+    width: 100%;
+    height: 3rem;
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    box-sizing: border-box;
+    color: #3e3e3e;
+}
+.order-footer dd span,.order-footer dd .msg-btn {
+    width: 30%;
+    float: left;
+    font-size: 1.6rem;
+    padding: .5rem 0;
+    height: 2rem;
+    color: #fff;
+    text-align: center;
+    background-color: #31b0ec;
+}
+.order-footer dd .msg-btn {
+    height: 3rem;
+    border-radius: 0;
+    color: #fff;
+}
+.order-footer dd .input-half {
+    width: 65%;
+    float: right;
+}
+.order-footer dd .msg-btn {
+    font-size: 1.4rem;
+}
+.submit-btn-div {
+    margin: 1.5rem 0 2rem;
+    text-align: center;
+}
+.submit-btn-div .submit-btn {
+    width: 60%;
+    color: #fff;
+    background-color: #db0052;
+    padding: .5rem 0;
+    border-radius: .5rem;
+}
+/*========order-footer=======end=====*/
+/*=====end======*/
+
+h1 {
+    /*font-size: 10px;*/
+    font-weight: normal;
+}
+h1:nth-child(2) {
+    font-size: 1.6rem;
+    font-weight: normal;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>on</title>
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+</head>
+<body>
+<div id="app">
+    <h1>姓名：<label v-text="Name"></label></h1>
+    <h1>年龄：{{ Age }}</h1>
+
+    <button class="btn btn-primary" v-on:click="Hello">Hello</button>
+</div>
+</body>
+</html>
+<script src="vue/vue.js"></script>
+<script type="text/javascript">
+    //Model
+    var data = {
+        Name: '小明',
+        Age: 18,
+    }
+
+    //ViewModel
+    var vue = new Vue({
+        el: '#app',
+        data: data,
+        methods: {
+            Hello: function (event) {
+                // `this` 在方法里指当前 Vue 实例
+                alert('Hello ' + this.Name + '!');
+                this.Age++;
+            }
+        }
+    });
+</script>

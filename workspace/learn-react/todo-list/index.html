@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>toDoList</title>
+    <script src = "../../../Learn/react/react-min/build/react.js"></script>
+    <script src = "../../../Learn/react/react-min/build/react-dom.js"></script>
+    <script src="http://static.runoob.com/assets/react/browser.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
+<script type="text/babel">
+
+    var server = {
+        data: [
+            {
+                id: 1,
+                text: "这是第1个"
+            },
+            {
+                id: 2,
+                text: "这是第2个"
+            },
+            {
+                id: 3,
+                text: "这是第3个"
+            }
+        ],
+        getAllDate: function(){
+            return {
+                "status": true,
+                "data": this.state.slice()
+            }
+        }
+    };
+
+
+
+
+    var TodoForm = React.createClass({
+        getInitialState: function(){
+            return {
+                text: ""
+            }
+        },
+        handleTextChange: function (e) {
+            this.setState({text: e.target.value});
+        },
+        render: function () {
+            return (
+                    <form role="form">
+                        <input className="form-control" placeholder="你下一步打算做什么?" onChange={this.handleTextChange}/>
+                    </form>
+            );
+        }
+    });
+    var TodoList = React.createClass({
+        render: function(){
+            var todoNodes = this.props.data.map(function(todo){
+                return (
+                        <li key={todo.id} >{todo.text}</li>
+                )
+
+            });
+            return (
+                    <ul>
+                        {todoNodes}
+                    </ul>
+            )
+        }
+    });
+
+    var TodoBox = React.createClass({
+        getInitialState: function(){
+            return {
+                data: [],
+                text: ""
+            }
+        },
+        componentDidMount: function(){
+            var data = server.getAllDate();
+            if(data.status === true){
+                this.setState({
+                    data: data.data.contat(data.data)
+                })
+            }
+        },
+        render: function(){
+            return (
+                <div className="col-md-4">
+                    <TodoList  data={ this.state.data } />
+                    <TodoForm />
+                </div>
+            );
+        }
+    });
+
+
+    ReactDOM.render(
+            <TodoBox data={ data } />,
+            document.getElementById("container")
+    )
+</script>

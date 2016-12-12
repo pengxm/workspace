@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src = "../../Learn/react/react-min/build/react.js"></script>
+    <script src = "../../Learn/react/react-min/build/react-dom.js"></script>
+    <script src="http://static.runoob.com/assets/react/browser.min.js"></script>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+</body>
+</html>
+<script src="../../www/jquery-1.11.2.min.js"></script>
+<script type="text/babel">
+   var MyInput = React.createClass({
+        getInitialState : function(){
+            return {
+                on : false
+            }
+        },
+       handleClickAll : function(){
+           var box = this.refs.box;
+           var checkbox = box.childNodes('input');
+           checkbox.props.checked = true;
+       },
+       handleClickFalse : function(){
+
+       },
+       handleClickOther : function(){
+
+       },
+       render : function(){
+
+           return (
+                   <div>
+                       <span>全选：</span><input type="button"  value="全选" onClick={this.handleClickAll}/><br />
+                       <span>不选</span><input type="button"  value="不选" onClick={this.handleClickFalse}/><br />
+                       <span>反选</span><input type="button"  value="反选" onClick={this.handleClickOther}/><br />
+                       <div ref="box">
+                           <input type="checkbox" /><br />
+                           <input type="checkbox" /><br />
+                           <input type="checkbox" /><br />
+                           <input type="checkbox" /><br />
+                           <input type="checkbox" /><br />
+                           <input type="checkbox" /><br />
+                           <input type="checkbox" /><br />
+                           <input type="checkbox" /><br />
+                           <input type="checkbox" /><br />
+                           <input type="checkbox" /><br />
+                       </div>
+
+                   </div>
+           )
+       }
+   });
+    ReactDOM.render(
+        <MyInput />,
+        document.getElementById('container')
+    )
+</script>
